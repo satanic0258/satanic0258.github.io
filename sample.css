@@ -18,18 +18,18 @@ div#pagebody {
 
 
 ul {
-	height:42px; background-color:#eeeeee; font-weight:bold;
+	height:60px; background-color:#eeeeee; font-weight:bold;
 }
 li{
 	float:left;			/*リスト項目を横に並べる*/
 	display:inline;			/*リスト項目をインライン表示にする*/
 	list-style-type:none;		/*リストマーカー無しにする*/
-	width:164px; height:42px;
+	width:164px; height:60px;
 }
 
 ul a {
 	display:block;				/*リンクをブロック表示にする*/
-	height:42px; padding-top:4px; text-align:center;
+	height:60px; padding-top:4px; text-align:center;
 	text-decoration:none; 			/*リンクの下線を無くす*/
 	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
 }
