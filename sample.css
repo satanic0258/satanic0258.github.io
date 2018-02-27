@@ -1,35 +1,76 @@
 * {
-	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
-	line-height:1.5;	/*全要素の行の高さを1.5倍にする*/
-	color:#333333;		/*文字色*/
+  margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
+  line-height:1.5;	/*全要素の行の高さを1.5倍にする*/
+  color:#333333;		/*文字色*/
 } 
 
-body {
-	background-color:#CCEEFF;	/*ページ全体の背景色*/
-	text-align:center;		/*IE6以下でセンタリングするための対策*/
+html {
+  height: auto;
+  background: #cceeff
 }
 
-div#pagebody {
-	width:796px; margin:0 auto;	/*内容全体をセンタリング*/
-	text-align:left;	/*テキストの配置を左揃えにする*/
-	background-repeat:repeat-y;		/*背景画像を縦方向に繰り返す*/
-	background-color:#ffffff;		/*内容全体の背景色*/
+article {
+  height: 100%; width: 90%; max-width: 1000px;
+  margin: auto;
+  margin-top: 65px;
+  background-color:#f9f9f9;	/*ページ全体の背景色*/
+  text-align:center;		/*IE6以下でセンタリングするための対策*/
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  box-shadow: 0 0 4px;
 }
 
-
-ul {
-	height:60px; background-color:#eeeeee; font-weight:bold;
+/***** nav *****/
+nav { position: fixed; top: 0; left: 0; width: 100%; } /*スクロールしないようにする*/
+nav * { 
+  color: aliceblue;
 }
-li{
-	float:left;			/*リスト項目を横に並べる*/
-	display:inline;			/*リスト項目をインライン表示にする*/
-	list-style-type:none;		/*リストマーカー無しにする*/
-	width:164px; height:60px;
+nav ul {
+  height:40px;
+  background-color:#242655;
+  overflow-x: auto;
+}
+nav li{
+  float:left;			/*リスト項目を横に並べる*/
+  display:inline;			/*リスト項目をインライン表示にする*/
+  list-style-type:none;		/*リストマーカー無しにする*/
+  height:100%;
+  overflow: hidden;
 }
 
-ul a {
-	display:block;				/*リンクをブロック表示にする*/
-	height:60px; padding-top:4px; text-align:center;
-	text-decoration:none; 			/*リンクの下線を無くす*/
-	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+nav li a {
+  display:block;				/*リンクをブロック表示にする*/
+  height:100%;
+  text-decoration:none; 			/*リンクの下線を無くす*/
+  display: flex; align-items: center; justify-content: center; /*上下左右の中央配置*/
+}
+nav li a:hover {
+  background-color:#32356f;
+}
+nav li a:before{ content: "　" }
+nav li a:after{ content: "　" }
+
+/***** footer *****/
+footer {
+  display: flex; align-items: center; justify-content: center; /*上下左右の中央配置*/
+  width:100%;
+  height:25px;
+  bottom:0;
+  text-align:center;
+  overflow:hidden;
+}
+footer p {
+  font-size: 14px;
+  color:gray;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  
+  transition: all 300ms ease;
+}
+
+img:hover {
+  width: 200px;
+  height: auto
 }
