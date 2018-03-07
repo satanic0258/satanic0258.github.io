@@ -20,15 +20,13 @@ article {
 }
 
 /***** nav *****/
-nav { position: fixed; top: 0; left: 0; width: 100%; } /*スクロールしないようにする*/
-nav * { 
-  color: aliceblue;
-}
-nav ul {
-  height:40px;
-  background-color:#242655;
-  overflow-x: scroll;
-}
+/* PC サイト */
+nav { position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: #242655; } /*スクロールしないようにする*/
+nav * { color: aliceblue; }
+/* ハンバーガーメニューまわり*/
+nav .nav-unshown { display: none; }
+
+nav ul { height: 100%; overflow-x: auto; }
 nav li{
   float:left;			/*リスト項目を横に並べる*/
   display:inline;			/*リスト項目をインライン表示にする*/
@@ -46,20 +44,80 @@ nav li a {
 nav li a:hover {
   background-color:#32356f;
 }
-nav li a:before{ content: "　" }
-nav li a:after{ content: "　" }
+nav li a:before, a:after{ content: "　" }
+
+/* スマホ用 */
+@media screen and (max-width: 480px){
+  /* メニューアイコン */
+  #nav-open {
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid;
+    border-color: #fff #fff transparent transparent;
+    transition: all 300ms 0s ease;
+    transform: rotate(45deg);
+  }
+
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 9998;
+    top: 40px;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 40px;
+    left: -200px;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る*/
+    max-width: 200px;/*最大幅*/
+    height: calc(100% - 40px);
+    background: #242655;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    transform: translateX(0%);/*左に隠しておく*/
+  }
+  nav ul{ height: 40px; }
+  nav li{ float:none; /*項目を縦に並べる*/ }
+  nav li a{ height: 40px; }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  #nav-input:checked ~ #nav-open {
+    transform: rotate(225deg);
+  }
+
+  #nav-input:checked ~ #nav-content {
+    transform: translateX(100%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+}
 
 /***** footer *****/
 footer {
   display: flex; align-items: center; justify-content: center; /*上下左右の中央配置*/
   width:100%;
-  height:25px;
+  height:40px;
   bottom:0;
   text-align:center;
   overflow:hidden;
 }
 footer p {
-  font-size: 14px;
+  font-size: 13px;
   color:gray;
 }
 

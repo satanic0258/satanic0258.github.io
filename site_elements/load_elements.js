@@ -4,6 +4,7 @@ $.ajax({ url: '/site_elements/header.html' })
   function(data) { $("header").append(data); },
   function(){ alert("header読み込み失敗"); }
 );
+
 //フッターの読み込み
 $.ajax({ url: '/site_elements/footer.html' })
 .then(
