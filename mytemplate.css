@@ -12,11 +12,11 @@ html {
 article {
   height: 100%; width: 90%; max-width: 1000px;
   margin: auto;
-  margin-top: 65px;
+  margin-top: 55px;
   background-color:#f9f9f9;	/*ページ全体の背景色*/
   text-align:center;		/*IE6以下でセンタリングするための対策*/
   font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  box-shadow: 0 0 4px;
+  box-shadow: 0 0 8px;
 }
 
 /***** nav *****/
@@ -27,7 +27,7 @@ nav * {
 nav ul {
   height:40px;
   background-color:#242655;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 nav li{
   float:left;			/*リスト項目を横に並べる*/
