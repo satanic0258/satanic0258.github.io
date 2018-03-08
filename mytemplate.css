@@ -1,7 +1,6 @@
 * {
   margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
   line-height:1.5;	/*全要素の行の高さを1.5倍にする*/
-  color:#333333;		/*文字色*/
 } 
 
 html {
@@ -14,7 +13,6 @@ article {
   margin: auto;
   margin-top: 55px;
   background-color:#f9f9f9;	/*ページ全体の背景色*/
-  text-align:center;		/*IE6以下でセンタリングするための対策*/
   font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   box-shadow: 0 0 8px;
 }
@@ -105,6 +103,15 @@ nav li a:before, a:after{ content: "　" }
     transform: translateX(100%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
+}
+
+/***** ソースコードの設定 *****/
+code {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+pre > code { font-size: 14px; }
+@media screen and (max-width: 700px){
+  pre > code{ font-size: 2vw; }  
 }
 
 /***** footer *****/

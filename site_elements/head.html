@@ -1,0 +1,51 @@
+<!-- 数式の設定 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }//,
+  //TeX: { Macros: { } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML&locale=ja"></script>
+
+<!-- ソースコードの設定 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+<script>
+$.getScript("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
+.done(function(){
+  $.getScript("https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.2.0/highlightjs-line-numbers.min.js")
+  .done(function(undefined) {
+    $('pre code').each(function(i, block) {
+      if($(this).attr('src') !== undefined) {
+        var precode = $(this);
+        $.get($(this).attr('src'), function(data) {
+          precode.text(data);
+          hljs.highlightBlock(block);
+          hljs.lineNumbersBlock(block);
+        });
+      }
+    })
+  })
+});
+</script>
+<style>
+/* for block of numbers */
+td.hljs-ln-numbers {
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 10px;
+
+  /* your custom style here */
+}
+/* for block of code */
+td.hljs-ln-code {
+  padding-left: 10px;
+}
+</style>
