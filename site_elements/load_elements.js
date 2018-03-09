@@ -18,3 +18,5 @@ $.ajax({ url: '/site_elements/footer.html' })
   function(data) { $("footer").append(data); },
   function(){ alert("footer読み込み失敗"); }
 );
+
+$.getScript("/site_elements/last_modified.js");

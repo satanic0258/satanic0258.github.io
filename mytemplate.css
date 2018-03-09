@@ -115,6 +115,13 @@ pre > code { font-size: 14px; }
   pre > code{ font-size: 2vw; }  
 }
 
+/***** 記事のフッタ *****/
+.article_footer{
+  text-align: right;
+  color: darkgray;
+  margin-right: 5px;
+  font-size: 12px;
+}
 /***** footer *****/
 footer {
   display: flex; align-items: center; justify-content: center; /*上下左右の中央配置*/
