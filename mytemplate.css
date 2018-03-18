@@ -115,7 +115,7 @@ nav li a:before, nav li a:after{ content: "　" }
 }
 
 /***** tag *****/
-span.page_tag{
+span.page_tag {
   color: #cceeff;/*文字色*/
   background: #FFF;
   border: solid 1px #cceeff;/*線*/

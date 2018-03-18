@@ -9,6 +9,7 @@ tags:
 ![](/img/icon.png)  
 <!-- <h2>その1</h2> -->
 テストページです．  
+
 <p> $$e^{ix} = \cos{x} + i\sin{x}$$ </p>
 <p> $$\sum_{k=1}^n k = \frac{n(n+1)}{2}$$ </p>  
 $x=\pi$ のとき$e^{i\pi}=-1$です．  
