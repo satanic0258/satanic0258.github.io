@@ -9,30 +9,21 @@ layout: default
 <p>{{page.description}}</p>
 
 {% for collection in site.collections %}
-
-{% assign tagset = "" %}
-{% for mpost in collection.docs %}
-{% assign tagset = tagset | concat: mpost.tags | uniq %}
+  {% assign tagset = "" %}
+  {% for mpost in collection.docs %}
+    {% assign tagset = tagset | concat: mpost.tags | uniq %}
+  {% endfor %}
+  {% if tagset contains page.tag %}
+    <h2>{{ collection.label }}</h2>
+    <ul>
+    {% for mpost in collection.docs %}
+      {% if mpost.tags contains page.tag %}
+        <li class="tagpage_post">
+          <a href="{{ site.baseurl }}{{ mpost.url }}">{{ mpost.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
 {% endfor %}
-{% if tagset contains page.tag %}
-<h2>{{ collection.label }}</h2>
-<ul>
-{% for mpost in collection.docs %}
-{% if mpost.tags contains page.tag %}
-<li class="tagpage_post">
-	<a href="{{ site.baseurl }}{{ mpost.url }}">{{ mpost.title }}</a>
-</li>
-{% endif %}
-{% endfor %}
-</ul>
-{% endif %}
-{% endfor %}
-
-<!-- <ul>
-{% for post in site.tags[page.tag] %}
-  <li class="tagpage_post">
-    {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul> -->
 </div>
