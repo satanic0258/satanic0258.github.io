@@ -2,6 +2,8 @@
   <h1>{{ page.title }}</h1>
 </div>
 <p class="text-right article_header">{% if page.update %}Last updated：{{ page.update | date: "%Y-%m-%d　%H:%M:%S" }}{% endif %}<br />
+{% if page.category %} Category:{{ site.data.categorymap[page.category] }}, {% endif %}
+
 Tag：
 {% capture tags %}
 {% for tag in page.tags %}

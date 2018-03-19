@@ -19,7 +19,7 @@ layout: default
     {% for mpost in collection.docs %}
       {% if mpost.tags contains page.tag %}
         <li class="tagpage_post">
-          <a href="{{ site.baseurl }}{{ mpost.url }}">{{ mpost.title }}</a>
+          <a href="{{ site.baseurl }}{{ mpost.url }}">[{{ site.data.categorymap[mpost.category] }}]{{ mpost.title }}</a>
         </li>
       {% endif %}
     {% endfor %}
