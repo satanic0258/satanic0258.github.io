@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="container">
-<h1>Tag : {% if page.title %}{{page.title}}{% else %}{{ page.tag }}{% endif %}</h1>
+<h1>Tag : {{ site.data.tagmap[page.tag] }}</h1>
 <hr />
 
 <p>{{page.description}}</p>

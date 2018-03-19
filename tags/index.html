@@ -8,12 +8,17 @@ title: タグ一覧
 <h1>{{ page.title }}</h1>
 <hr />
 <p>タグ一覧です．</p>
+
+{% for collection in site.collections %}
+  {% assign ctags = collection.docs | map:'tags' %}
+  {% assign tagset = tagset | concat : ctags | uniq %}
+{% endfor %}
+
 <ul>
-{% assign tags =  site.snippets | map: 'tags' | join: ','  | split: ',' | uniq %}
-{% for tag in tags %}
-	<li class="tagpage_post">
-		<span class="page_tag"><a href="/tags/{{ tag }}/index.html">{{ tag }}</a></span>
-	</li>
+{% for tag in tagset %}
+  <li class="tagpage_post">
+    <span class="page_tag"><a href="/tags/{{ tag }}/index.html">{{ site.data.tagmap[tag] }}</a></span>
+  </li>
 {% endfor %}
 </ul>
 </div>

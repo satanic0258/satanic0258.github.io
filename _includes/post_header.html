@@ -11,6 +11,6 @@ Tag：
 {% assign eachtag = tags | split:' ' %}
 
 {% for tag in eachtag %}
-<span class="page_tag"><a href="/tags/{{ tag }}/index.html">{{ tag }}</a></span>
+<span class="page_tag"><a href="/tags/{{ tag }}/index.html">{{ site.data.tagmap[tag] }}</a></span>
 {% endfor %}
 </p>
