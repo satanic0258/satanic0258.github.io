@@ -6,7 +6,8 @@ layout: default
 <h1>Tag : {{ site.data.tagmap[page.tag] }}</h1>
 <hr />
 
-<p>{{page.description}}</p>
+<p>{{ site.data.tagmap[page.tag] }}に関する記事です．</p>
+{{ page.content }}
 
 {% for collection in site.collections %}
   {% assign tagset = "" %}
