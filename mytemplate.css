@@ -159,6 +159,13 @@ img.social-icon{
   margin: 10px 10px 0 10px;
   width: 32px;
   height: auto;
+  transition: all 300ms 0s ease;
+  opacity: 0.5;
+
+}
+img.social-icon:hover{
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 li.tagpage_post {
