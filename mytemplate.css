@@ -25,6 +25,12 @@ h1 {
   border-left: solid 5px #7db4e6;/*左線*/
   padding-left: 0.25em;
 }
+h2 {
+  border-left: solid 3px #7db4e6;/*左線*/
+  margin-top: 5px;
+  padding-left: 0.25em;
+  font-size: 1.2em;
+}
 
 li {
   margin-left: 2em;
