@@ -23,25 +23,28 @@ MathJax.Hub.Config({
 
 <!-- ソースコードの設定 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.2.0/highlightjs-line-numbers.min.js"></script>
 <script>
-$.getScript("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
-.done(function(){
-  $.getScript("https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.2.0/highlightjs-line-numbers.min.js")
-  .done(function(undefined) {
-    hljs.configure({
-      tabReplace: "    ",	// 4文字分の半角スペース
-    });
-    $('pre code').each(function(i, block) {
-      if($(this).attr('src') !== undefined) {
-        var precode = $(this);
-        $.get($(this).attr('src'), function(data) {
-          precode.text(data);
-          hljs.highlightBlock(block);
-          hljs.lineNumbersBlock(block);
-        });
-      }
-    })
-  })
+$(function() {
+  hljs.configure({
+    tabReplace: "    ",	// 4文字分の半角スペース
+  });
+  $('pre code').each(function(i, block) {
+    if($(this).attr('src') !== void 0) {
+      var precode = $(this);
+      $.get($(this).attr('src'), function(data) {
+        precode.text(data);
+        hljs.highlightBlock(block);
+        hljs.lineNumbersBlock(block);
+      });
+    }
+  });
+  $('pre.highlight code').each(function(i, block) {
+    $(this).text($(this).text().slice(0, -1)); // 末尾の空行を消す
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+  });
 });
 </script>
 <style>
