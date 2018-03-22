@@ -1,5 +1,6 @@
 exclude: ["vendor", "Gemfile", "Gemfile.lock"]
 
+title: satanic0258-github-io
 permalink: none
 
 bootstrap-version: "3.3.7" # Bootstrap http://getbootstrap.com/getting-started/
