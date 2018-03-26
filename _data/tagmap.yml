@@ -1,2 +1,3 @@
 segment-tree: セグメント木
 min-cost-flow: 最小費用流
+segment-set: 区間をsetで管理するやつ
