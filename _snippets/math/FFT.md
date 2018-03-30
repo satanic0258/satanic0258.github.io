@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FFT (高速フーリエ変換)
-update: 2018-03-30 12:37:48 +0900
+update: 2018-03-30 13:07:07 +0900
 category: math
 tags:
 - fft
@@ -45,4 +45,4 @@ std::vector<int> c(FFT::mul(a, b));
 ## 参考文献
 ---
 - [高速フーリエ変換 - slideshare](https://www.slideshare.net/chokudai/fft-49066791/)
-- [高速フーリエ変換 (FFT) - pekempeyのブログ]()
+- [高速フーリエ変換 (FFT) - pekempeyのブログ](https://pekempey.hatenablog.com/entry/2016/10/24/171936)
