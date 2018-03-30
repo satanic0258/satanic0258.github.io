@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FFT (高速フーリエ変換)
-update: 2018-03-30 02:27:22 +0900
+update: 2018-03-30 09:48:37 +0900
 category: math
 tags:
 - fft
@@ -17,12 +17,14 @@ $$
 
 ## 計算量
 ---
-$N$を$max(|a|, |b|)$より大きい$2$ベキの数として，$O(N\log N)$.
+$N$を$\max(|a|, |b|)$より大きい$2$ベキの数として，$O(N\log N)$.
 
 ## 使い方
-**FFTはdouble型の演算を行うため誤差に注意**
-
 ---
+**FFTはdouble型の演算を行うため誤差に注意**  
+$m_a:=\max(a), m_b:=\max(b), n:=2^{\lfloor\lg\max(|a|, |b|)\rfloor+1}$として,  
+$m_a m_b n \leq 2^{53}$が限度.
+
 ```cpp
 // 列a, bを用意
 std::vector<int> a, b;
