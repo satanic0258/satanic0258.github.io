@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FFT (高速フーリエ変換)
-update: 2018-03-30 09:48:37 +0900
+update: 2018-03-30 12:37:48 +0900
 category: math
 tags:
 - fft
@@ -35,6 +35,7 @@ std::vector<int> c(FFT::mul(a, b));
 
 ## 実装例
 ---
+以下は非再帰，not-in-placeの実装．
 <pre class="cpp"><code src="https://raw.githubusercontent.com/satanic0258/Cpp_snippet/master/src/math/FFT.cpp"></code></pre>
 
 ## 問題例
