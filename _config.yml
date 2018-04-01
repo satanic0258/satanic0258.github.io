@@ -1,4 +1,4 @@
-exclude: ["vendor", "Gemfile", "Gemfile.lock"]
+exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock"]
 
 title: satanic0258-github-io
 permalink: none

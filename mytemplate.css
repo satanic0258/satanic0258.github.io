@@ -146,6 +146,31 @@ pre > code { font-size: 14px; }
 @media screen and (max-width: 700px){
   pre > code{ font-size: 2vw; }  
 }
+/***** ソースコードのコピーボタン *****/
+span.btn-copy{
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 0 6px;
+  font-size: 12px;
+  color: #767676;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+span.btn-copy:hover{
+  background-color: #ccf;
+}
+span.btn-copy:active{
+  background-color: #444;
+}
+
+.language-cpp,.cpp{
+  position: relative;
+}
 
 /***** 記事のヘッダ *****/
 .article_header{

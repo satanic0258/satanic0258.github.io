@@ -24,7 +24,11 @@ MathJax.Hub.Config({
 <!-- ソースコードの設定 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.2.0/highlightjs-line-numbers.min.js"></script>
+<style> /* 行番号のスタイル */
+  code ul{margin-left:-35px; list-style:none; counter-reset: line;}
+  code li{counter-increment: line;}
+  code li:before{content: counter(line);text-align: right;width: 30px;display: inline-block;border-right:solid 1px #ffffff;margin-right:5px;padding-right:5px;}
+</style>
 <script>
 $(function() {
   hljs.configure({
@@ -36,32 +40,35 @@ $(function() {
       $.get($(this).attr('src'), function(data) {
         precode.text(data);
         hljs.highlightBlock(block);
-        hljs.lineNumbersBlock(block);
+        var current = precode,
+          lineStart = parseInt(current.data('line-start')),
+          lineFocus = parseInt(current.data('line-focus')),
+          items = current.html().split("\n"),
+          total = items.length,
+          result = '<ul ' + (!isNaN(lineStart) ? 'start="' + lineStart + '"' : '') + '>';
+        for (var i = 0; i < total; i++) {
+          result += '<li>' + (items[i].length>0?items[i]:" ") + '</li>';
+        }
+        result += '</ul>';
+        var items = current.empty().append(result);
       });
     }
   });
   $('pre.highlight code').each(function(i, block) {
     $(this).text($(this).text().slice(0, -1)); // 末尾の空行を消す
     hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    var current = $(this),
+      lineStart = parseInt(current.data('line-start')),
+      lineFocus = parseInt(current.data('line-focus')),
+      items = current.html().split("\n"),
+      total = items.length,
+      result = '<ul ' + (!isNaN(lineStart) ? 'start="' + lineStart + '"' : '') + '>';
+    for (var i = 0; i < total; i++) {
+      result += '<li>' + (items[i].length>0?items[i]:' ') + '</li>';
+    }
+    result += '</ul>';
+    var items = current.empty().append(result);
   });
 });
 </script>
-<style>
-/* for block of numbers */
-td.hljs-ln-numbers {
-  user-select: none;
-
-  text-align: center;
-  color: #ccc;
-  border-right: 1px solid #CCC;
-  vertical-align: top;
-  padding-right: 5px !important;
-
-  /* your custom style here */
-}
-/* for block of code */
-td.hljs-ln-code {
-  padding-left: 5px !important;
-}
-</style>
+<script src="/js/copy-button.js"></script>
