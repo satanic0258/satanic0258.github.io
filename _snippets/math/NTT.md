@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NTT (整数環FFT)
-update: 2018-03-31 04:17:27 +0900
+update: 2018-04-06 03:06:02 +0900
 category: math
 tags:
 - fft
@@ -64,6 +64,7 @@ std::vector<int> c(NTT::mul(a, b, 1000000001));
 ## 問題例
 ---
 - [\[AtCoder\]高速フーリエ変換 - AtCoder Typical Contest 001](https://atc001.contest.atcoder.jp/tasks/fft_c) <small>[verified 1](https://atc001.contest.atcoder.jp/submissions/2281464)</small> <small>[verified 2](https://atc001.contest.atcoder.jp/submissions/2281465)</small> <small>[verified 3](https://atc001.contest.atcoder.jp/submissions/2281467)</small>
+- [\[CSA\]Permutations - Round #75](https://csacademy.com/contest/archive/task/permutations/) <small>[verified](https://csacademy.com/submission/1489893/)</small>
 
 ## 参考文献
 ---
