@@ -49,6 +49,7 @@ bool f = map.same(i, j);
 ---
 - [\[HackerRank\]Factorial Array - World CodeSprint 12](https://www.hackerrank.com/contests/world-codesprint-12/challenges/factorial-array/problem) <small>[verified](https://www.hackerrank.com/contests/world-codesprint-12/challenges/factorial-array/submissions/code/1306764580)</small>
 - [\[AOJ\]Elevator - RUPC2018day1](https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp18Day1/problems/G) <small>[verified](https://onlinejudge.u-aizu.ac.jp/beta/review.html#RitsCamp18Day1/2750709)</small>
+- [\[yukicoder\]No.674 n連勤](https://yukicoder.me/problems/no/674) <small>[verified](https://yukicoder.me/submissions/251123)</small>
 
 <!--
 ## 参考文献
