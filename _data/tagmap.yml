@@ -4,3 +4,4 @@ segment-set: 区間をsetで管理するやつ
 euler-tour: オイラーツアー
 fft: FFT
 lis: LIS
+slide-minimum: スライド最小値
