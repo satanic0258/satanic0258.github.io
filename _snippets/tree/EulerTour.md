@@ -1,6 +1,7 @@
 ---
 layout: post
 title: オイラーツアー
+update: 2018-04-16 03:25:49 +0900
 category: tree
 tags:
 - euler-tour

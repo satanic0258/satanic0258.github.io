@@ -1,6 +1,7 @@
 ---
 layout: post
 title: セグメント木 / SegmentTree
+update: 2018-04-16 03:25:49 +0900
 category: data-structure
 tags:
 - segment-tree

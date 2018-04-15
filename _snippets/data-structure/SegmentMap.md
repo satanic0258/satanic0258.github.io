@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 区間をsetで管理するやつ
+update: 2018-04-16 03:25:49 +0900
 category: data-structure
 tags:
 - segment-set
